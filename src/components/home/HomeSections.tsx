@@ -1,3 +1,5 @@
+import fondoBlanco from "../../../docs/fondos/fondo-blanco.webp"
+import fondoGrisDesktop from "../../../docs/fondos/fondo-gris.webp"
 import entrena from "../../../docs/referencias/01-entrena-sin-excusas.png"
 import fuerza from "../../../docs/referencias/02-fuerza-samurai.png"
 import mural from "../../../docs/referencias/24-mural-casco-osb.jpg"
@@ -95,7 +97,18 @@ const focusClass = {
 export function HomeSections() {
   return (
     <>
-      <section id="combos" aria-labelledby="combos-title" className="splash scroll-mt-24 text-paper">
+      <div className="relative isolate overflow-hidden bg-ink text-paper">
+        <img
+          src={fondoGrisDesktop}
+          alt=""
+          className="pointer-events-none absolute inset-0 -z-10 hidden size-full object-cover object-center lg:block"
+        />
+        <img
+          src={fondoGrisDesktop}
+          alt=""
+          className="pointer-events-none absolute inset-0 -z-10 size-full object-cover object-center lg:hidden"
+        />
+        <section id="combos" aria-labelledby="combos-title" className="relative scroll-mt-24">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 md:px-8 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <p className="text-xs font-semibold tracking-[0.18em] text-lime uppercase">Ahorra más · Mejores resultados</p>
@@ -141,8 +154,41 @@ export function HomeSections() {
           </ul>
         </div>
       </section>
+      <section
+        id="destacados"
+        aria-labelledby="destacados-title"
+        className="relative isolate scroll-mt-24 overflow-hidden bg-[#f4f4f2] text-ink"
+      >
+        <img
+          src={fondoBlanco}
+          alt=""
+          className="pointer-events-none absolute inset-0 -z-10 size-full object-cover object-center"
+        />
+        <div className="relative z-0 mx-auto grid max-w-6xl items-center gap-8 px-5 py-16 md:px-8 lg:grid-cols-[0.7fr_1.3fr]">
+          <div>
+            <p className="text-xs font-semibold tracking-[0.18em] text-ink/50 uppercase">Productos destacados</p>
+            <h2 id="destacados-title" className="mt-2 font-display text-5xl leading-[0.9] font-bold tracking-[-0.03em] uppercase md:text-6xl">
+              Equipá
+              <span className="block">tu disciplina</span>
+            </h2>
+            <a href="#tienda" className="pressable mt-6 inline-flex min-h-11 items-center gap-2 text-sm font-semibold">
+              Ver todos los productos
+              <ArrowIcon />
+            </a>
+          </div>
+          <ul className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+            {destacados.map((item) => (
+              <li key={item.name} className="rounded-3xl bg-white p-3 shadow-[0_16px_32px_rgb(0_0_0/0.06)]">
+                <img src={tarros} alt="" className={`h-32 w-full rounded-2xl bg-[#f6f6f4] object-cover ${focusClass[item.focus]}`} />
+                <h3 className="mt-3 text-sm font-semibold">{item.name}</h3>
+                <p className="mt-1 text-base font-bold">{item.price}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
 
-      <section id="beneficios" aria-labelledby="beneficios-title" className="splash scroll-mt-24 text-paper">
+      <section id="beneficios" aria-labelledby="beneficios-title" className="relative scroll-mt-24">
         <div className="mx-auto grid max-w-6xl items-center gap-8 px-5 py-16 md:px-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <h2 id="beneficios-title" className="font-display text-5xl leading-[0.9] font-bold tracking-[-0.03em] uppercase md:text-6xl">
@@ -168,6 +214,7 @@ export function HomeSections() {
           </ul>
         </div>
       </section>
+      </div>
 
       <section id="tienda" aria-labelledby="categorias-title" className="splash scroll-mt-24 text-paper">
         <div className="mx-auto max-w-6xl px-5 py-16 md:px-8">
@@ -197,30 +244,7 @@ export function HomeSections() {
         </div>
       </section>
 
-      <section id="destacados" aria-labelledby="destacados-title" className="scroll-mt-24 bg-[#f4f4f2] px-5 py-16 text-ink md:px-8">
-        <div className="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-[0.7fr_1.3fr]">
-          <div>
-            <p className="text-xs font-semibold tracking-[0.18em] text-ink/50 uppercase">Productos destacados</p>
-            <h2 id="destacados-title" className="mt-2 font-display text-5xl leading-[0.9] font-bold tracking-[-0.03em] uppercase md:text-6xl">
-              Equipá
-              <span className="block">tu disciplina</span>
-            </h2>
-            <a href="#tienda" className="pressable mt-6 inline-flex min-h-11 items-center gap-2 text-sm font-semibold">
-              Ver todos los productos
-              <ArrowIcon />
-            </a>
-          </div>
-          <ul className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-            {destacados.map((item) => (
-              <li key={item.name} className="rounded-3xl bg-white p-3 shadow-[0_16px_32px_rgb(0_0_0/0.06)]">
-                <img src={tarros} alt="" className={`h-32 w-full rounded-2xl bg-[#f6f6f4] object-cover ${focusClass[item.focus]}`} />
-                <h3 className="mt-3 text-sm font-semibold">{item.name}</h3>
-                <p className="mt-1 text-base font-bold">{item.price}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+      
 
       <section aria-label="Entrena sin excusas" className="relative">
         <img src={entrena} alt="Entrena sin excusas" className="h-72 w-full object-cover md:h-[28rem]" />

@@ -16,12 +16,7 @@ export function Hero() {
         alt=""
         className="absolute inset-0 -z-20 h-full w-full object-cover object-bottom"
       />
-      <img
-        src={tarrosHero}
-        alt="Tarros de suplementos apoyados en el piso"
-        className="hero-jars pointer-events-none absolute bottom-0 left-1/2 z-10 w-full max-w-xl -translate-x-1/2 drop-shadow-[0_18px_16px_rgb(0_0_0/0.4)] lg:hidden"
-      />
-      <div className="relative z-20 mx-auto grid min-h-[100svh] w-full max-w-6xl items-end gap-4 px-5 pt-20 pb-44 md:px-8 lg:grid-cols-[minmax(0,0.86fr)_minmax(0,1.14fr)] lg:items-center lg:gap-8 lg:pt-24 lg:pb-8">
+      <div className="relative z-20 mx-auto grid min-h-[100svh] w-full max-w-6xl items-start gap-6 px-5 pt-20 pb-8 md:px-8 lg:grid-cols-[minmax(0,0.86fr)_minmax(0,1.14fr)] lg:items-center lg:gap-8 lg:pt-24 lg:pb-10">
         <div className="hero-card order-2 max-w-xl rounded-[1.75rem] bg-ink/80 p-5 shadow-[var(--shadow-soft)] ring-1 ring-white/10 md:p-6 lg:order-1 lg:mb-16">
           <p className="text-xs font-semibold tracking-[0.18em] text-paper/80 uppercase">
             Suplementos · Mendoza
@@ -68,8 +63,8 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative order-1 mx-auto flex w-full max-w-[19rem] flex-col items-center lg:order-2 lg:mt-2 lg:h-full lg:max-w-none lg:self-stretch lg:justify-self-stretch">
-          <div className="hero-lockup flex w-full max-w-[19rem] flex-col items-center lg:ml-auto lg:w-[30rem] lg:max-w-[30rem]">
+        <div className="contents lg:order-2 lg:flex lg:h-full lg:w-full lg:flex-col lg:items-end lg:justify-end lg:self-stretch">
+          <div className="hero-lockup order-1 mx-auto flex w-full max-w-[19rem] flex-col items-center lg:order-none lg:mx-0 lg:w-full lg:max-w-[30rem] lg:-translate-y-16">
           <div
             role="img"
             aria-label="Samurai"
@@ -96,8 +91,8 @@ export function Hero() {
           </div>
           <img
             src={tarrosHero}
-            alt=""
-            className="hero-jars pointer-events-none absolute bottom-[-2rem] left-[calc(100%-16.2rem)] z-10 hidden w-[1040px] max-w-none -translate-x-1/2 drop-shadow-[0_18px_16px_rgb(0_0_0/0.4)] lg:block"
+            alt="Tarros de suplementos apoyados en el piso"
+            className="hero-jars order-3 mx-auto h-auto w-auto min-w-0 max-h-[min(30vh,16rem)] max-w-full justify-self-center object-contain drop-shadow-[0_18px_16px_rgb(0_0_0/0.4)] lg:order-none lg:mx-0 lg:mt-4 lg:max-h-[min(40vh,27rem)] lg:max-w-[min(100%,34rem)] lg:self-end"
           />
         </div>
       </div>
