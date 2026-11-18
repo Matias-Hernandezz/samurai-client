@@ -339,6 +339,26 @@
   }
 }
 
+.hero-marquee-viewport {
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-marquee-viewport {
+    animation: hero-marquee-scroll 36s linear infinite;
+  }
+}
+
+@keyframes hero-marquee-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
 .intro-layer {
   position: fixed;
   inset: 0;
